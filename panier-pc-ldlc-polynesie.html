@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panier PC gaming ASUS, Core Ultra 7 + RTX 5060, LDLC → Polynésie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E9F0EF; --surface:#F8FBFA; --ink:#0D2B33; --muted:#4D676D; --line:#C3D3D1;
+  --parts:#127C82; --ship:#B9851B; --tax:#AE2F5E; --fees:#5E747B;
+  --ok:#11736F; --over:#AE2F5E; --focus:#127C82;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F2429; --surface:#16333A; --ink:#E5EFEE; --muted:#9BB4B8; --line:#2B4D55;
+    --parts:#41B5BA; --ship:#E2B24C; --tax:#E46B9C; --fees:#8FA5AB;
+    --ok:#4CC3B5; --over:#E46B9C; --focus:#41B5BA;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F2429; --surface:#16333A; --ink:#E5EFEE; --muted:#9BB4B8; --line:#2B4D55;
+  --parts:#41B5BA; --ship:#E2B24C; --tax:#E46B9C; --fees:#8FA5AB;
+  --ok:#4CC3B5; --over:#E46B9C; --focus:#41B5BA;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.5;
+  font-variant-numeric:tabular-nums}
+a{color:var(--parts);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 56px}
+
+header h1{font-stretch:125%;font-weight:800;font-size:clamp(1.6rem,4.2vw,2.4rem);line-height:1.1;margin:0 0 8px;letter-spacing:-.01em}
+header p{margin:0;color:var(--muted);max-width:62ch}
+
+.hero{margin:28px 0 8px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.hero-top{display:flex;flex-wrap:wrap;align-items:flex-end;gap:8px 28px}
+.total{font-stretch:125%;font-weight:800;font-size:clamp(2.6rem,9vw,4.6rem);line-height:1;letter-spacing:-.02em}
+.xpf{font-stretch:110%;font-weight:600;font-size:clamp(1.1rem,3vw,1.5rem);color:var(--muted)}
+.status{margin:10px 0 0;font-weight:600}
+.status.ok{color:var(--ok)} .status.over{color:var(--over)}
+
+.bar{position:relative;margin:26px 0 10px;height:46px}
+.track{display:flex;height:100%;border-radius:8px;overflow:hidden;background:var(--line)}
+.seg{height:100%;transition:width .35s ease}
+.seg.parts{background:var(--parts)} .seg.ship{background:var(--ship)}
+.seg.tax{background:var(--tax)} .seg.fees{background:var(--fees)}
+.budget-line{position:absolute;top:-8px;bottom:-8px;width:0;border-left:2px dashed var(--ink);transition:left .35s ease}
+.budget-line span{position:absolute;top:-24px;left:-4px;white-space:nowrap;font-size:.8rem;font-weight:600;transform:translateX(-50%)}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px 18px;margin:18px 0 0;padding:0;list-style:none}
+.legend li{display:flex;gap:10px;align-items:baseline}
+.dot{flex:none;width:12px;height:12px;border-radius:3px;transform:translateY(1px)}
+.legend b{display:block;font-weight:700}
+.legend small{color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:1fr}}
+section h2{font-stretch:115%;font-weight:750;font-size:1.25rem;margin:0 0 4px}
+section > p.lead{margin:0 0 14px;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+
+.choices{display:grid;gap:14px;margin-bottom:18px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend.q{font-weight:700;margin-bottom:6px;padding:0}
+.seg-ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.seg-ctl label{position:relative;display:block;cursor:pointer;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg)}
+.seg-ctl input{position:absolute;opacity:0;pointer-events:none}
+.seg-ctl strong{display:block}
+.seg-ctl span{font-size:.88rem;color:var(--muted)}
+.seg-ctl input:checked + strong{color:var(--parts)}
+.seg-ctl label:has(input:checked){border-color:var(--parts);box-shadow:inset 0 0 0 1px var(--parts)}
+.seg-ctl label:has(input:focus-visible){outline:3px solid var(--focus);outline-offset:2px}
+
+.cart{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:28px minmax(0,1fr) 112px 82px;gap:8px 12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.row input[type=checkbox]{width:20px;height:20px;accent-color:var(--parts);margin:0}
+.row .kind{font-size:.82rem;color:var(--muted)}
+.row .name{font-weight:650;line-height:1.3}
+.row .note{font-size:.82rem;color:var(--ship);margin-top:2px}
+.row.done .name{text-decoration:line-through;text-decoration-color:var(--parts);opacity:.65}
+.price{display:flex;align-items:center;gap:4px}
+.price input{width:100%;font:inherit;font-variant-numeric:tabular-nums;text-align:right;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.ht{text-align:right;color:var(--muted);font-size:.92rem}
+.cart-head{display:grid;grid-template-columns:28px minmax(0,1fr) 112px 82px;gap:12px;font-size:.82rem;color:var(--muted);padding:0 0 6px}
+.cart-head span:nth-child(3),.cart-head span:nth-child(4){text-align:right}
+.sum{display:grid;grid-template-columns:minmax(0,1fr) 112px 82px;gap:12px;padding:12px 0 0;font-weight:700}
+.sum span:not(:first-child){text-align:right}
+@media (max-width:520px){
+  .row,.cart-head{grid-template-columns:24px minmax(0,1fr) 96px}
+  .row .ht,.cart-head span:nth-child(4){display:none}
+  .sum{grid-template-columns:minmax(0,1fr) 96px}
+  .sum span:nth-child(3){display:none}
+}
+
+.field{display:grid;gap:4px;margin-bottom:16px}
+.field label{font-weight:700}
+.field .in{display:flex;align-items:center;gap:8px}
+.field input{width:130px;font:inherit;font-weight:600;font-variant-numeric:tabular-nums;padding:8px 10px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.field small{color:var(--muted)}
+.detail{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.detail li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.94rem}
+.detail li span:last-child{font-weight:600;white-space:nowrap}
+.detail li.strong{font-weight:700}
+.btn{font:inherit;font-weight:600;cursor:pointer;padding:9px 14px;border-radius:9px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);margin-top:16px}
+.btn:hover{border-color:var(--parts)}
+
+.lower{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+@media (max-width:860px){.lower{grid-template-columns:1fr}}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.94rem}
+th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.checklist{margin:0;padding-left:1.1em}
+.checklist li{margin-bottom:8px;max-width:70ch}
+footer{margin-top:32px;color:var(--muted);font-size:.86rem;max-width:80ch}
+footer ul{padding-left:1.1em}
+@media (prefers-reduced-motion:reduce){.seg,.budget-line{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Panier PC gaming ASUS, Core Ultra 7 + RTX 5060, livré en Polynésie</h1>
+  <p>Coche chaque pièce au fur et à mesure que tu l'ajoutes à ton panier LDLC, puis saisis les frais de port qu'affiche LDLC : le coût final se met à jour. Prix relevés sur ldlc.com le 1er octobre 2026, boîtier non inclus.</p>
+</header>
+
+<div class="hero" aria-live="polite">
+  <div class="hero-top">
+    <div class="total" id="total">—</div>
+    <div class="xpf" id="totalXpf">—</div>
+  </div>
+  <p class="status" id="status">—</p>
+  <div class="bar" aria-hidden="true">
+    <div class="track">
+      <div class="seg parts" id="sParts"></div>
+      <div class="seg ship" id="sShip"></div>
+      <div class="seg tax" id="sTax"></div>
+      <div class="seg fees" id="sFees"></div>
+    </div>
+    <div class="budget-line" id="budgetLine"><span>Budget 2 500 €</span></div>
+  </div>
+  <ul class="legend">
+    <li><i class="dot" style="background:var(--parts)"></i><div><b id="lParts">—</b><small>Pièces, prix hors TVA française</small></div></li>
+    <li><i class="dot" style="background:var(--ship)"></i><div><b id="lShip">—</b><small>Frais de port LDLC</small></div></li>
+    <li><i class="dot" style="background:var(--tax)"></i><div><b id="lTax">—</b><small>Droits et taxes douane PF</small></div></li>
+    <li><i class="dot" style="background:var(--fees)"></i><div><b id="lFees">—</b><small>Frais de dédouanement</small></div></li>
+  </ul>
+</div>
+
+<div class="grid">
+  <section class="panel">
+    <h2>Le panier</h2>
+    <p class="lead">Les prix sont modifiables si LDLC les a changés depuis le relevé.</p>
+
+    <div class="choices">
+      <fieldset>
+        <legend class="q">Carte mère ASUS</legend>
+        <div class="seg-ctl">
+          <label><input type="radio" name="mb" value="tuf"><strong>TUF GAMING B860-PLUS WIFI</strong><span>Gamme pensée pour durer</span></label>
+          <label><input type="radio" name="mb" value="prime"><strong>PRIME B860-PLUS WIFI</strong><span>30 € de moins</span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend class="q">Alimentation</legend>
+        <div class="seg-ctl">
+          <label><input type="radio" name="psu" value="corsair"><strong>Corsair RM850e</strong><span>Garantie 7 ans</span></label>
+          <label><input type="radio" name="psu" value="cm"><strong>Cooler Master Elite Gold 850</strong><span>35 € de moins</span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend class="q">Mémoire vive DDR5</legend>
+        <div class="seg-ctl">
+          <label><input type="radio" name="ram" value="16"><strong>16 Go (2 × 8)</strong><span>Rentre dans le budget</span></label>
+          <label><input type="radio" name="ram" value="32"><strong>32 Go (2 × 16)</strong><span>Dépasse le budget</span></label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="cart-head"><span></span><span>Pièce</span><span>Prix TTC FR</span><span>HT</span></div>
+    <ul class="cart" id="cart"></ul>
+    <div class="sum"><span>Total pièces</span><span id="sumTtc">—</span><span id="sumHt">—</span></div>
+  </section>
+
+  <section class="panel">
+    <h2>Port et douane</h2>
+    <p class="lead">LDLC affiche le port exact à l'étape de paiement, une fois ton adresse en Polynésie saisie.</p>
+
+    <div class="field">
+      <label for="port">Frais de port affichés par LDLC</label>
+      <div class="in"><input id="port" type="number" min="0" step="1" inputmode="decimal"> €</div>
+      <small>150 € par défaut tant que tu n'as pas le vrai montant.</small>
+    </div>
+    <div class="field">
+      <label for="dd">Droit de douane</label>
+      <div class="in"><input id="dd" type="number" min="0" max="40" step="0.5" inputmode="decimal"> %</div>
+      <small>10 % est le taux appliqué aux ordinateurs portables : c'est une hypothèse prudente pour les composants.</small>
+    </div>
+    <div class="field">
+      <label for="fees">Frais de dédouanement</label>
+      <div class="in"><input id="fees" type="number" min="0" step="1" inputmode="decimal"> €</div>
+      <small>Au-delà de 50 000 XPF, la déclaration passe par un commissionnaire en douane, à tes frais.</small>
+    </div>
+
+    <ul class="detail" id="detail"></ul>
+    <button class="btn" id="reset" type="button">Revenir aux valeurs de départ</button>
+  </section>
+</div>
+
+<div class="lower">
+  <section class="panel">
+    <h2>Ce que ça fait tourner</h2>
+    <p class="lead">Configurations recommandées officielles, comparées à la tienne.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Jeu</th><th>Carte recommandée</th><th>Processeur recommandé</th></tr></thead>
+        <tbody>
+          <tr><td>Battlefield 6</td><td>RTX 3060 Ti / RX 6700 XT</td><td>i7-10700 / Ryzen 7 3700X</td></tr>
+          <tr><td>Dune: Awakening</td><td>RTX 3070 / RX 6700 XT</td><td>i7-10700K / Ryzen 5 2600X</td></tr>
+          <tr><td>ARC Raiders</td><td>RTX 2070 / RX 5700 XT</td><td>i5-9600K / Ryzen 5 3600</td></tr>
+          <tr><td>Once Human</td><td>GTX 1060 / RX 580</td><td>i7-7700</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ta configuration, Core Ultra 7 270K Plus avec une RTX 5060, dépasse toutes ces recommandations. Avec la RTX 5060, vise le 1080p en réglages élevés ou le 1440p avec le DLSS 4 ; la future carte graphique ouvrira le 1440p en élevé.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Avant de valider la commande</h2>
+    <ul class="checklist">
+      <li>Vérifie que le boîtier que tu achètes sur place est au format ATX, accepte un ventirad d'au moins 160 mm de haut et une carte graphique de la longueur du modèle choisi.</li>
+      <li>Mets le BIOS de la carte mère à jour avant d'installer Windows.</li>
+      <li>Pour tenir 5 ans sous climat tropical : branche le PC sur une multiprise parafoudre ou un onduleur, choisis un boîtier avec filtres à poussière et dépoussière-le tous les 3 à 6 mois.</li>
+      <li>L'alimentation de 850 W est prévue pour ta future carte graphique : tu n'auras pas à la changer au moment de l'upgrade.</li>
+      <li>Le processeur a une puce graphique intégrée : le jour où tu changes de carte graphique, le PC reste utilisable entre les deux.</li>
+      <li>Battlefield 6 exige le TPM 2.0 et le Secure Boot : active le TPM (Intel PTT) et le Secure Boot dans le BIOS après le montage.</li>
+      <li>Windows n'est pas dans ce panier, prévois une licence.</li>
+      <li>LDLC peut imposer Chronopost au lieu de Colissimo pour un colis lourd ; le port change alors.</li>
+      <li>Un retour SAV vers la métropole coûte cher : garde les emballages et teste toutes les pièces dès réception.</li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  <p>Calcul : prix HT = prix TTC ÷ 1,2. Valeur CAF = pièces HT + port. Taxes = droit de douane + TEAP 2 % + péage 1,25 % + TEEI 1 % + petites taxes fixes (PID, SETIL, taxe statistique, environ 6 €), puis TVA polynésienne de 16 % sur l'ensemble. Conversion 1 € = 119,332 XPF. Il s'agit d'une estimation : le montant exact sera celui de la déclaration en douane.</p>
+  <ul>
+    <li><a href="https://www.ldlc.com/aide/22-livraison-dans-les-dom-tom/" target="_blank" rel="noopener">LDLC, livraison dans les DOM-TOM</a></li>
+    <li><a href="https://douane.application-proxi.com/p/taxation-de-quelques-produits-de-consommation-courante" target="_blank" rel="noopener">Douane de Polynésie française, taxation du matériel électronique</a></li>
+    <li><a href="https://www.douane.gouv.fr/sites/default/files/2021-05/10/10-questions-export-polynesie.pdf" target="_blank" rel="noopener">Douane, 10 questions sur l'export vers la Polynésie</a></li>
+  </ul>
+</footer>
+</div>
+
+<script>
+(function(){
+  var XPF = 119.332, BUDGET = 2500, FIXED_SMALL = 6;
+  var KEY = 'pc-ldlc-pf-ultra-asus-v1';
+  var CAT = {
+    cpu:  {kind:'Processeur', name:'Intel Core Ultra 7 270K Plus', url:'https://www.ldlc.com/fiche/PB00733012.html', price:399.95},
+    cool: {kind:'Ventirad', name:'Thermalright Peerless Assassin 120 SE', url:'https://www.ldlc.com/fiche/PB00581740.html', price:45, note:'Prix estimé, à vérifier sur la fiche'},
+    mbtuf:{kind:'Carte mère', name:'ASUS TUF GAMING B860-PLUS WIFI', url:'https://www.ldlc.com/fiche/PB00660870.html', price:259.95},
+    mbprime:{kind:'Carte mère', name:'ASUS PRIME B860-PLUS WIFI', url:'https://www.ldlc.com/fiche/PB00660755.html', price:229.95},
+    ram16:{kind:'Mémoire', name:'Kingston FURY Beast 16 Go (2 × 8 Go) DDR5 6000 CL30', url:'https://www.ldlc.com/fiche/PB00654322.html', price:381.95},
+    ram32:{kind:'Mémoire', name:'Textorm 32 Go (2 × 16 Go) DDR5 6000 CL36', url:'https://www.ldlc.com/fiche/PB00742029.html', price:609.95},
+    gpu:  {kind:'Carte graphique', name:'ASUS TUF Gaming GeForce RTX 5060 OC 8 Go', url:'https://www.ldlc.com/fiche/PB00686247.html', price:559.95},
+    ssd:  {kind:'SSD', name:'Samsung SSD 990 NVMe 1 To', url:'https://www.ldlc.com/fiche/PB00747904.html', price:199.95},
+    psucor:{kind:'Alimentation', name:'Corsair RM850e (2025)', url:'https://www.ldlc.com/fiche/PB00663406.html', price:134.95, note:'Garantie constructeur 7 ans'},
+    psucm:{kind:'Alimentation', name:'Cooler Master Elite Gold 850', url:'https://www.ldlc.com/fiche/PB00747542.html', price:99.95}
+  };
+  var DEFAULTS = {mb:'tuf', psu:'corsair', ram:'16', port:150, dd:10, fees:60, prices:{}, checks:{}};
+  var st = load();
+
+  function load(){
+    var s = JSON.parse(JSON.stringify(DEFAULTS));
+    try{ var raw = localStorage.getItem(KEY); if(raw){ var o = JSON.parse(raw); for(var k in o){ s[k]=o[k]; } } }catch(e){}
+    return s;
+  }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(st)); }catch(e){} }
+
+  var eur = new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR'});
+  var eur0 = new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+  function xpf(v){ return Math.round(v*XPF).toLocaleString('fr-FR') + ' XPF'; }
+  function num(v, d){ var n = parseFloat(String(v).replace(',','.')); return isFinite(n) && n >= 0 ? n : d; }
+  function priceOf(id){ return st.prices[id] != null ? st.prices[id] : CAT[id].price; }
+
+  function selection(){
+    return ['cpu','cool', st.mb==='prime'?'mbprime':'mbtuf', st.ram==='32'?'ram32':'ram16','gpu','ssd', st.psu==='cm'?'psucm':'psucor'];
+  }
+
+  function renderCart(){
+    var ul = document.getElementById('cart'); ul.innerHTML = '';
+    selection().forEach(function(id){
+      var it = CAT[id], p = priceOf(id);
+      var li = document.createElement('li'); li.className = 'row' + (st.checks[id] ? ' done' : '');
+      li.innerHTML =
+        '<input type="checkbox" aria-label="Ajouté au panier LDLC : '+it.name+'"'+(st.checks[id]?' checked':'')+'>'+
+        '<div><div class="kind">'+it.kind+'</div><div class="name"><a href="'+it.url+'" target="_blank" rel="noopener">'+it.name+'</a></div>'+
+        (it.note?'<div class="note">'+it.note+'</div>':'')+'</div>'+
+        '<div class="price"><input type="number" min="0" step="0.01" inputmode="decimal" value="'+p.toFixed(2)+'" aria-label="Prix TTC '+it.name+'"><span>€</span></div>'+
+        '<div class="ht">'+eur.format(p/1.2)+'</div>';
+      var cb = li.querySelector('input[type=checkbox]');
+      cb.addEventListener('change', function(){ st.checks[id] = cb.checked; li.classList.toggle('done', cb.checked); save(); });
+      var pi = li.querySelector('.price input');
+      pi.addEventListener('input', function(){ st.prices[id] = num(pi.value, CAT[id].price); li.querySelector('.ht').textContent = eur.format(st.prices[id]/1.2); save(); compute(); });
+      ul.appendChild(li);
+    });
+  }
+
+  function compute(){
+    var ttc = selection().reduce(function(a,id){ return a + priceOf(id); }, 0);
+    var ht = ttc/1.2, port = st.port, caf = ht + port;
+    var dd = caf*st.dd/100, others = caf*0.0425, base = caf + dd + others + FIXED_SMALL;
+    var tva = base*0.16, taxes = dd + others + FIXED_SMALL + tva, fees = st.fees;
+    var total = caf + taxes + fees;
+
+    document.getElementById('sumTtc').textContent = eur.format(ttc);
+    document.getElementById('sumHt').textContent = eur.format(ht);
+    document.getElementById('total').textContent = '≈ ' + eur0.format(total);
+    document.getElementById('totalXpf').textContent = xpf(total);
+    var s = document.getElementById('status'), diff = BUDGET - total;
+    if(diff >= 0){ s.className='status ok'; s.textContent = 'Il reste ' + eur0.format(diff) + ' sous ton budget de 2 500 €.'; }
+    else { s.className='status over'; s.textContent = 'Ça dépasse ton budget de 2 500 € de ' + eur0.format(-diff) + '.'; }
+
+    var scale = Math.max(total, BUDGET) * 1.04;
+    [['sParts',ht],['sShip',port],['sTax',taxes],['sFees',fees]].forEach(function(p){ document.getElementById(p[0]).style.width = (p[1]/scale*100)+'%'; });
+    document.getElementById('budgetLine').style.left = (BUDGET/scale*100)+'%';
+    document.getElementById('lParts').textContent = eur0.format(ht);
+    document.getElementById('lShip').textContent = eur0.format(port);
+    document.getElementById('lTax').textContent = eur0.format(taxes);
+    document.getElementById('lFees').textContent = eur0.format(fees);
+
+    document.getElementById('detail').innerHTML =
+      '<li><span>Valeur CAF (pièces HT + port)</span><span>'+eur.format(caf)+'</span></li>'+
+      '<li><span>Droit de douane ('+String(st.dd).replace('.',',')+' %)</span><span>'+eur.format(dd)+'</span></li>'+
+      '<li><span>TEAP, péage, TEEI (4,25 %)</span><span>'+eur.format(others)+'</span></li>'+
+      '<li><span>Taxes fixes (PID, SETIL, statistique)</span><span>'+eur.format(FIXED_SMALL)+'</span></li>'+
+      '<li><span>TVA Polynésie 16 %</span><span>'+eur.format(tva)+'</span></li>'+
+      '<li class="strong"><span>Total à payer à la douane</span><span>'+eur.format(taxes)+'</span></li>'+
+      '<li><span>Soit en francs</span><span>'+xpf(taxes)+'</span></li>';
+  }
+
+  function bindRadios(name){
+    document.querySelectorAll('input[name='+name+']').forEach(function(r){
+      r.checked = (r.value === st[name]);
+      r.addEventListener('change', function(){ if(r.checked){ st[name] = r.value; save(); renderCart(); compute(); } });
+    });
+  }
+  function bindField(id){
+    var el = document.getElementById(id); el.value = st[id];
+    el.addEventListener('input', function(){ st[id] = num(el.value, DEFAULTS[id]); save(); compute(); });
+  }
+
+  bindRadios('mb'); bindRadios('psu'); bindRadios('ram');
+  ['port','dd','fees'].forEach(bindField);
+  document.getElementById('reset').addEventListener('click', function(){
+    st = JSON.parse(JSON.stringify(DEFAULTS)); save();
+    ['mb','psu','ram'].forEach(function(n){ document.querySelectorAll('input[name='+n+']').forEach(function(r){ r.checked = (r.value === st[n]); }); });
+    ['port','dd','fees'].forEach(function(id){ document.getElementById(id).value = st[id]; });
+    renderCart(); compute();
+  });
+  renderCart(); compute();
+})();
+</script>
+</body>
+</html>
